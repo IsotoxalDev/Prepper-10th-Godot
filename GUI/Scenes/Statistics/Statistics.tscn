@@ -1,0 +1,528 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Font/iosevka-fixed-regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Icons/ArrowDown.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="Statistics" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Staticstics" type="Label" parent="VBoxContainer"]
+margin_right = 460.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.772549, 0.847059, 0.427451, 1 )
+text = "Statistics"
+
+[node name="AnsweredCorrect" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 88.0
+margin_right = 460.0
+margin_bottom = 127.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnsweredCorrect" type="Label" parent="VBoxContainer/AnsweredCorrect"]
+margin_right = 300.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Answered Correct:   "
+
+[node name="value" type="Label" parent="VBoxContainer/AnsweredCorrect"]
+margin_left = 304.0
+margin_right = 319.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="AnsweredIncorrect" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 152.0
+margin_right = 460.0
+margin_bottom = 191.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnsweredIncorrect" type="Label" parent="VBoxContainer/AnsweredIncorrect"]
+margin_right = 300.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Answered Incorrect: "
+
+[node name="value" type="Label" parent="VBoxContainer/AnsweredIncorrect"]
+margin_left = 304.0
+margin_right = 319.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="AverageTimeTaken" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 216.0
+margin_right = 460.0
+margin_bottom = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Average" type="Label" parent="VBoxContainer/AverageTimeTaken"]
+margin_right = 300.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Average Time taken: "
+
+[node name="value" type="Label" parent="VBoxContainer/AverageTimeTaken"]
+margin_left = 304.0
+margin_right = 319.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="AttendedQustions" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 280.0
+margin_right = 460.0
+margin_bottom = 319.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttendedQuestions" type="Label" parent="VBoxContainer/AttendedQustions"]
+margin_right = 300.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Attended Questions: "
+
+[node name="value" type="Label" parent="VBoxContainer/AttendedQustions"]
+margin_left = 304.0
+margin_right = 319.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="CorrectIncorrect" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 344.0
+margin_right = 460.0
+margin_bottom = 383.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CorrectIncorrect" type="Label" parent="VBoxContainer/CorrectIncorrect"]
+margin_right = 300.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Correct/Incorrect:  "
+
+[node name="value" type="ProgressBar" parent="VBoxContainer/CorrectIncorrect"]
+margin_left = 304.0
+margin_right = 460.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="Stats" type="Control" parent="VBoxContainer"]
+margin_top = 408.0
+margin_right = 460.0
+margin_bottom = 808.0
+rect_min_size = Vector2( 0, 400 )
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Stats"]
+margin_right = 460.0
+margin_bottom = -30.0
+custom_icons/arrow = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.772549, 0.847059, 0.427451, 1 )
+text = "Correct / Incorrect"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subjects" type="HBoxContainer" parent="VBoxContainer/Stats"]
+margin_left = 20.0
+margin_top = 65.0
+margin_right = 460.0
+margin_bottom = 370.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubjectNames" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+margin_right = 285.0
+margin_bottom = 315.0
+custom_constants/separation = 30
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/SubjectNames"]
+margin_right = 285.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Hindi: "
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/SubjectNames"]
+margin_top = 69.0
+margin_right = 285.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Maths: "
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/SubjectNames"]
+margin_top = 138.0
+margin_right = 285.0
+margin_bottom = 177.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "English: "
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/SubjectNames"]
+margin_top = 207.0
+margin_right = 285.0
+margin_bottom = 246.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Science: "
+
+[node name="ScocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/SubjectNames"]
+margin_top = 276.0
+margin_right = 285.0
+margin_bottom = 315.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Social Science:    "
+
+[node name="CorrectIncoreectRatio" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+margin_left = 289.0
+margin_right = 440.0
+margin_bottom = 315.0
+size_flags_horizontal = 3
+custom_constants/separation = 25
+
+[node name="Hindi" type="ProgressBar" parent="VBoxContainer/Stats/Subjects/CorrectIncoreectRatio"]
+margin_right = 151.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="Maths" type="ProgressBar" parent="VBoxContainer/Stats/Subjects/CorrectIncoreectRatio"]
+margin_top = 68.0
+margin_right = 151.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="English" type="ProgressBar" parent="VBoxContainer/Stats/Subjects/CorrectIncoreectRatio"]
+margin_top = 136.0
+margin_right = 151.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="Science" type="ProgressBar" parent="VBoxContainer/Stats/Subjects/CorrectIncoreectRatio"]
+margin_top = 204.0
+margin_right = 151.0
+margin_bottom = 247.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="SocialScience" type="ProgressBar" parent="VBoxContainer/Stats/Subjects/CorrectIncoreectRatio"]
+margin_top = 272.0
+margin_right = 151.0
+margin_bottom = 315.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+percent_visible = false
+
+[node name="QuestionsAnswered" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+visible = false
+margin_left = 292.0
+margin_right = 440.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/QuestionsAnswered"]
+margin_right = 148.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/QuestionsAnswered"]
+margin_top = 65.0
+margin_right = 148.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/QuestionsAnswered"]
+margin_top = 130.0
+margin_right = 148.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/QuestionsAnswered"]
+margin_top = 195.0
+margin_right = 148.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="SocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/QuestionsAnswered"]
+margin_top = 260.0
+margin_right = 148.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="CorrectAnswers" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+visible = false
+margin_left = 292.0
+margin_right = 440.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/CorrectAnswers"]
+margin_right = 148.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/CorrectAnswers"]
+margin_top = 65.0
+margin_right = 148.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/CorrectAnswers"]
+margin_top = 130.0
+margin_right = 148.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/CorrectAnswers"]
+margin_top = 195.0
+margin_right = 148.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="SocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/CorrectAnswers"]
+margin_top = 260.0
+margin_right = 148.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="IncorrectAnswers2" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+visible = false
+margin_left = 292.0
+margin_right = 440.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/IncorrectAnswers2"]
+margin_right = 148.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/IncorrectAnswers2"]
+margin_top = 65.0
+margin_right = 148.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/IncorrectAnswers2"]
+margin_top = 130.0
+margin_right = 148.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/IncorrectAnswers2"]
+margin_top = 195.0
+margin_right = 148.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="SocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/IncorrectAnswers2"]
+margin_top = 260.0
+margin_right = 148.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="AttendedQuestions" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+visible = false
+margin_left = 292.0
+margin_right = 440.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/AttendedQuestions"]
+margin_right = 148.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/AttendedQuestions"]
+margin_top = 65.0
+margin_right = 148.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/AttendedQuestions"]
+margin_top = 130.0
+margin_right = 148.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/AttendedQuestions"]
+margin_top = 195.0
+margin_right = 148.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="SocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/AttendedQuestions"]
+margin_top = 260.0
+margin_right = 148.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="AverageTime" type="VBoxContainer" parent="VBoxContainer/Stats/Subjects"]
+visible = false
+margin_left = 244.0
+margin_right = 440.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Hindi" type="Label" parent="VBoxContainer/Stats/Subjects/AverageTime"]
+margin_right = 196.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Maths" type="Label" parent="VBoxContainer/Stats/Subjects/AverageTime"]
+margin_top = 59.0
+margin_right = 196.0
+margin_bottom = 98.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="English" type="Label" parent="VBoxContainer/Stats/Subjects/AverageTime"]
+margin_top = 118.0
+margin_right = 196.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Science" type="Label" parent="VBoxContainer/Stats/Subjects/AverageTime"]
+margin_top = 177.0
+margin_right = 196.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="SocialScience" type="Label" parent="VBoxContainer/Stats/Subjects/AverageTime"]
+margin_top = 236.0
+margin_right = 196.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 833.0
+margin_right = 460.0
+margin_bottom = 878.0
+custom_fonts/font = SubResource( 4 )
+text = "Save Statistics as PDF"

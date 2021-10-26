@@ -8,14 +8,27 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "HTTPRequest",
+"class": "MAIL",
+"language": "GDScript",
+"path": "res://Scripts/Mail.gd"
+} ]
+_global_script_class_icons={
+"MAIL": ""
+}
+
 [application]
 
 config/name="Prepper"
+run/main_scene="res://Scenes/Question/Question.tscn"
+boot_splash/bg_color=Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 
 [display]
 
 window/size/width=500
 window/size/height=1000
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

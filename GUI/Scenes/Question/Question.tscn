@@ -1,9 +1,23 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Font/iosevka-fixed-regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Question/Question.gd" type="Script" id=2]
+[ext_resource path="res://Icons/Home.png" type="Texture" id=3]
+[ext_resource path="res://Theme.tres" type="Theme" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.772549, 0.847059, 0.427451, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -16,54 +30,137 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 7
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.772549, 0.847059, 0.427451, 0.862745 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.772549, 0.847059, 0.427451, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="Theme" id=4]
-Button/colors/font_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-Button/colors/font_color_disabled = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-Button/colors/font_color_hover = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-Button/colors/font_color_pressed = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-Button/constants/hseparation = 2
-Button/fonts/font = null
-Button/styles/disabled = null
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = SubResource( 2 )
-
 [sub_resource type="DynamicFont" id=5]
-size = 50
+size = 35
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 34
-font_data = ExtResource( 1 )
+[sub_resource type="Animation" id=6]
+resource_name = "Correct"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.870588 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Correct" ]
+}
 
-[sub_resource type="DynamicFont" id=7]
-size = 25
-font_data = ExtResource( 1 )
+[sub_resource type="Animation" id=7]
+resource_name = "Incorrect"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.870588 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Incorrect" ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Score"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.870588 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=8]
-size = 35
+size = 70
 font_data = ExtResource( 1 )
 
 [node name="Question" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 4 )
+theme = ExtResource( 4 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -957.0
+texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,7 +181,7 @@ __meta__ = {
 [node name="Time" type="Label" parent="VBoxContainer"]
 margin_right = 460.0
 margin_bottom = 63.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 1
 
@@ -93,17 +190,17 @@ margin_top = 83.0
 margin_right = 460.0
 margin_bottom = 127.0
 
-[node name="Time2" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Q" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_right = 34.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "Q:"
 
-[node name="Time3" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="No" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 38.0
 margin_right = 55.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 
 [node name="Question" type="Label" parent="VBoxContainer"]
@@ -112,7 +209,7 @@ margin_right = 460.0
 margin_bottom = 670.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 3 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at massa convallis, ultrices nisl ac, elementum libero. Curabitur viverra quam non turpis tempor, id dapibus erat rhoncus. In tincidunt luctus suscipit. Vestibulum venenatis congue volutpat. Vestibulum vitae dolor scelerisque, aliquam lorem id, tincidunt dolor. Maecenas sit amet quam et purus. "
 align = 3
 autowrap = true
@@ -121,31 +218,68 @@ autowrap = true
 margin_top = 690.0
 margin_right = 460.0
 margin_bottom = 735.0
-custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Option 1"
 
 [node name="Option2" type="Button" parent="VBoxContainer"]
 margin_top = 755.0
 margin_right = 460.0
 margin_bottom = 800.0
-custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Option 2"
 
 [node name="Option3" type="Button" parent="VBoxContainer"]
 margin_top = 820.0
 margin_right = 460.0
 margin_bottom = 865.0
-custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Option 3"
 
 [node name="Option4" type="Button" parent="VBoxContainer"]
 margin_top = 885.0
 margin_right = 460.0
 margin_bottom = 930.0
-custom_fonts/font = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Option 4"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/Correct = SubResource( 6 )
+anims/Incorrect = SubResource( 7 )
+anims/Score = SubResource( 9 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 127.0
+margin_top = 455.0
+margin_right = 372.0
+margin_bottom = 544.0
+custom_fonts/font = SubResource( 8 )
+text = "Correct"
+
+[connection signal="pressed" from="Home" to="." method="_on_Home_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
